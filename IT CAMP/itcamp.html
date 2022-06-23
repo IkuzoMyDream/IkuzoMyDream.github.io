@@ -1136,17 +1136,27 @@ section#about p{
     .my-project-container-img {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(1, 100vh);
+    grid-template-rows: repeat(1, 50vh);
     }
     .my-photos-container-img {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(1, 100vh);
+    grid-template-rows: repeat(1, 50vh);
     }
     .my-photos-container-img figure:nth-child(3) {
     grid-row-start: 3;
     grid-row-end: 3;
     }
+    section hr {
+      width: 300px !important;
+    }
+    .container {
+    width: 90%;
+    margin: 0 auto;
+  }
+  section#home {
+    padding-top: 75px;
+  }
 }
 
 
@@ -1199,7 +1209,7 @@ section#about p{
         </ul>
     </nav>
 
-    <div class="container">
+    <div class="container ">
         <section id="home">
             <h1 style="font-size: 100px;line-height: 100px;font-family: 'Montserrat', sans-serif;">I'm Wildan</h1>
             <p style="font-family: 'Montserrat', sans-serif;line-height: 50px;font-size: large">Full Stack Developer</p>
