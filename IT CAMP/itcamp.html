@@ -923,7 +923,6 @@ ul li a i {
     left: 25px;
     top: 15px;
 }
-
 .nav-img {
     position: absolute;
     right: 0;
@@ -943,6 +942,12 @@ section {
 }
 section:not(:first-child) {
     text-align: center;
+}
+section#home h1::before {
+  content: "I'm ";
+}
+section#home h1::after {
+  content: "dan";
 }
 section hr {
     margin: auto;
@@ -1100,8 +1105,11 @@ section#about p{
         width: 100%;
     }
 }
-@media screen and (max-width: 806px) {
-    nav {
+@media screen and (max-width: 600px) {
+  section#home h1::before {
+    content: "" !important;
+  }
+  nav {
         text-align: center;
         height: 35px;
         background-color: black;
@@ -1161,8 +1169,12 @@ section#about p{
 }
 
 @media screen and (max-width: 425px) {
+  section#home 
   section#about p:nth-child(2) {
     display: block !important;
+  }
+  section#home h1::after {
+    display: block;
   }
 }
 
@@ -1288,7 +1300,7 @@ section#about p{
 
     <div class="container ">
         <section id="home">
-            <h1 style="font-size: 100px;line-height: 100px;font-family: 'Montserrat', sans-serif;">I'm Wildan</h1>
+            <h1 style="font-size: 100px;line-height: 100px;font-family: 'Montserrat', sans-serif;">Wil</h1>
             <p style="font-family: 'Montserrat', sans-serif;line-height: 50px;font-size: large">Full Stack Developer</p>
             <img src="https://images.unsplash.com/photo-1544502062-f82887f03d1c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1259&q=80" alt="" class="header-img" style="width: 100%;">
         </section>
