@@ -23,7 +23,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Saira:wght@100&display=swap" rel="stylesheet">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/">
   <link rel="manifest" href="/site.webmanifest">
   <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
   <style>
@@ -2511,15 +2511,14 @@
             wildan8376@gmail.com</p>
         </div>
       </div>
-      <form action="https://www.gmail.com" method="posttarget=" _blank" class="message">
-        <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required="" name="Name"></p>
-        <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required="" name="Email"></p>
-        <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required="" name="Subject"></p>
-        <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" required="" name="Message"></p>
+      <form method="posttarget=" _blank" class="message" onsubmit="sendEmail(); reset(); return false">
+        <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required="" name="Name" id="name"></p>
+        <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required="" name="Email" id="email"></p>
+        <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required="" name="Subject" id="subject"></p>
+        <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" required="" name="Message" id="message"></p>
         <p>
           <button class="w3-button w3-light-grey w3-padding-large" type="submit">
             <i class="fa fa-paper-plane"></i> SEND MESSAGE
-            <!-- connect to php (not available) -->
           </button>
         </p>
       </form>
@@ -2537,6 +2536,7 @@
           class="w3-hover-text-green">WILWIL</a></p>
     </footer>
   </div>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
   <script>
     const navbar = document.querySelector('nav');
     const navLink = document.querySelectorAll('.nav-link')
@@ -2559,6 +2559,21 @@
         }
       })
     })
+
+    function sendEmail() {
+      Email.send({
+          SecureToken : "bc70ca97-f4e3-435b-965b-f99811ffaf20",
+          To : 'wilwillearning@gmail.com',
+          From : document.getElementById("email").value,
+          Subject : document.getElementById("subject").value,
+          Body : "name: " + document.getElementById("name").value
+          + "<br> Email: " + document.getElementById("email").value
+          + "<br> Subject: " + document.getElementById("subject").value
+          + "<br> Message: " + document.getElementById("message").value
+      }).then(
+        message => alert(message)
+      );
+    }
   </script>
 </body>
 
