@@ -1,0 +1,24 @@
+.portfolio-container .portfolio-item{
+    border: solid black;
+}
+
+.activities .portfolio-container .portfolio-item {
+    border: solid black .5px;
+}
+
+
+
+.activities .activities-container .activities-item {
+    position: relative;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 10px -5px;
+    overflow: hidden;
+    border-radius: 2px;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+  }
+  
+* {
+    text-decoration: none !important;
+}
